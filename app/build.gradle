@@ -72,7 +72,7 @@ def perfAnalysis = project.hasProperty('perfAnalysis')
 
 android {
 
-    compileSdkVersion 33
+    compileSdkPreview "UpsideDownCake"
     // install this NDK version and Cmake to produce smaller APKs. Build will still work if not installed
     ndkVersion "${ndkEnv.get("NDK_VERSION")}"
 
@@ -83,7 +83,7 @@ android {
 
     defaultConfig {
         minSdkVersion 24
-        targetSdkVersion 33
+        targetSdkPreview "UpsideDownCake"
 
         buildConfigField 'boolean', 'CI', ciBuild.toString()
         buildConfigField 'boolean', 'RUNTIME_PERF_ANALYSIS', perfAnalysis.toString()
